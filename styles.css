@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #000;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    background: #f0f2f5;
+    border-bottom: 2px solid #888;
+    gap: 1.5rem;
+}
+
+nav .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.search-bar {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.8rem 1.5rem 0.8rem 2.5rem;
+    border: 1px solid #888;
+    border-radius: 25px;
+    background: #fff;
+    font-size: 1rem;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.main-banner {
+    width: 100%;
+    height: 300px;
+    background-image: url('images/iphone_17e_main.png');
+    background-size: cover;
+    background-position: center;
+    border-bottom: 2px solid #888;
+}
+
+.content-section {
+    padding: 2.5rem 1rem;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.content-section p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    padding: 0.7rem 2.5rem;
+    background: transparent;
+    border: 1px solid #888;
+    cursor: pointer;
+    margin-bottom: 2.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.item-card {
+    background: #fff;
+    border: 1px solid #888;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+}
+
+.item-image {
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid #888;
+}
+
+.category-cards .img-1 { background-image: url('images/iphone_17_pro_1card.png'); }
+.category-cards .img-2 { background-image: url('images/MacBook_2card.png'); }
+.category-cards .img-3 { background-image: url('images/Apple_Watch_Ultra_3_3card.jpg'); }
+
+.product-cards .img-4 { background-image: url('images/MacBook_Air_4card.png'); }
+.product-cards .img-5 { background-image: url('images/AirPods_Max_2_5card.png'); }
+.product-cards .img-6 { background-image: url('images/iphone_17e_6card.png'); }
+
+.item-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    background: #fff;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 1rem;
+    border-top: 2px solid #888;
+    gap: 1.5rem;
+    background: #f0f2f5;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.footer-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 2.5rem;
+    border: 2px solid #888;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+}
+
+/* Поля форми (Validation) */
+.modal-content input, 
+.modal-content textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 1rem 0;
+    border: 1px solid #888;
+    font-size: 1rem;
+}
+
+.modal-content h2 {
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .items-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1.5rem 2.5rem;
+        flex-wrap: wrap;
+    }
+
+    .search-bar {
+        order: 3;
+        flex: 1 1 100%;
+        margin-top: 1rem;
+    }
+
+    .main-banner {
+        height: 400px;
+    }
+    
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 3rem 2.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .items-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    header {
+        flex-wrap: nowrap;
+        padding: 1.5rem 5%;
+    }
+
+    .search-bar {
+        order: initial;
+        flex: 1;
+        margin-top: 0;
+        margin: 0 3rem;
+    }
+
+    .main-banner {
+        height: 500px;
+    }
+
+    .content-section {
+        padding: 4rem 10%;
+    }
+    
+    footer {
+        padding: 3rem 10%;
+    }
+}

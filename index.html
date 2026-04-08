@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Store</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Sale</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search products...">
+        </div>
+        <div class="user-actions">
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="#">Login</a>
+        </div>
+    </header>
+
+    <main>
+        <div id="home-page">
+            <section class="banner">
+                <div class="main-banner"></div>
+            </section>
+
+            <section class="content-section">
+                <h2>Categories</h2>
+                <p>Explore our premium selection of high-quality tech products.</p>
+                <button class="btn">Shop All</button>
+
+                <div class="items-grid">
+                    <div class="item-card" onclick="showDetails(1)">
+                        <div class="item-image" style="background-image: url('images/iphone_17_pro_1card.png');"></div>
+                        <div class="item-info"><span>iPhone 17 Pro Max</span><b>$999</b></div>
+                    </div>
+                    <div class="item-card" onclick="showDetails(2)">
+                        <div class="item-image" style="background-image: url('images/MacBook_2card.png');"></div>
+                        <div class="item-info"><span>MacBook Neo</span><b>$999</b></div>
+                    </div>
+                    <div class="item-card" onclick="showDetails(3)">
+                        <div class="item-image" style="background-image: url('images/Apple_Watch_Ultra_3_3card.jpg');"></div>
+                        <div class="item-info"><span>Apple Watch Ultra 3</span><b>$999</b></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Our Products</h2>
+                <p>Latest gadgets with international warranty and fast delivery.</p>
+                <button class="btn">Shop All</button>
+
+                <div class="items-grid">
+                    <div class="item-card" onclick="showDetails(4)">
+                        <div class="item-image" style="background-image: url('images/MacBook_Air_4card.png');"></div>
+                        <div class="item-info"><span>MacBook Air 13</span><b>$999</b></div>
+                    </div>
+                    <div class="item-card" onclick="showDetails(5)">
+                        <div class="item-image" style="background-image: url('images/AirPods_Max_2_5card.png');"></div>
+                        <div class="item-info"><span>AirPods Max 2</span><b>$999</b></div>
+                    </div>
+                    <div class="item-card" onclick="showDetails(6)">
+                        <div class="item-image" style="background-image: url('images/iphone_17e_6card.png');"></div>
+                        <div class="item-info"><span>iPhone 17e</span><b>$999</b></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="catalog-container" class="hidden"></div>
+        <div id="product-container" class="hidden"></div>
+    </main>
+
+    <footer>
+        <div class="footer-copy">&copy; 2026. Wireframe. All Rights Reserved.</div>
+        <ul class="footer-links">
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Legal info</a></li>
+            <li><a href="#">Security</a></li>
+        </ul>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
