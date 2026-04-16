@@ -140,21 +140,41 @@ window.showRegister = function() {
                 <input type="text" id="rName" placeholder="Full Name" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #888;">
                 <input type="email" id="rEmail" placeholder="Email Address" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #888;">
                 <input type="password" id="rPass" placeholder="Password" required style="width:100%; padding:12px; margin-bottom:20px; border:1px solid #888;">
+                <div id="rError" style="color: red; margin-bottom: 10px; min-height: 1.2rem; font-weight: bold;"></div>
                 <button type="submit" class="btn" style="width:100%; background: #000; color: #fff;">Register Account</button>
             </form>
             <p style="margin-top: 20px;">Already have an account? <a href="#" onclick="showLogin()" style="text-decoration: underline; font-weight:bold;">Login here</a></p>
         </div>`;
     main.appendChild(page);
-
-    document.getElementById('rForm').onsubmit = (e) => {
+    
+    const rForm = document.getElementById('rForm');
+    const error = document.getElementById('rError');
+    
+    rForm.querySelectorAll('input').forEach(input => {
+        input.addEventListener('input', () => {
+            error.textContent = "";
+            });
+        });
+    
+    rForm.onsubmit = (e) => {
         e.preventDefault();
-        const user = {
-            name: document.getElementById('rName').value,
-            email: document.getElementById('rEmail').value,
-            pass: document.getElementById('rPass').value
-        };
-        localStorage.setItem('user', JSON.stringify(user));
-        alert("Account created successfully!");
+        const name = document.getElementById('rName').value.trim();
+        const email = document.getElementById('rEmail').value.trim();
+        const pass = document.getElementById('rPass').value.trim();
+
+        if (!name || !email || !pass){
+            error.textContent = "All fields must be filled!";
+            return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)){
+            error.textContent = "Invalid email format!"
+            return;
+        }
+        
+        localStorage.setItem('user', JSON.stringify({name, email, pass}));
+        alert(`Welcome, ${name}!`);
         showLogin();
     };
 };
